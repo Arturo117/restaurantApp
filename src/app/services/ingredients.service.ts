@@ -20,6 +20,11 @@ export class IngredientsService{
         this.ingredients.push(ingredient);
         this.ingredientsChanged.emit(this.ingredients.slice());
     }
+    updateIngredient(index: number, ingredient: Ingredient){
+        this.ingredients[index] = ingredient;
+        this.ingredientsChanged.emit(this.ingredients.slice());
+    }
+
     addIngredients(auxIngredients: Ingredient[]){
         for(const i of auxIngredients){
             var NombreMA = this.ingredients.find(x=>x.name == i.name);
