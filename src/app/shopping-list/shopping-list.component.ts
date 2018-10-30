@@ -17,6 +17,9 @@ export class ShoppingListComponent implements OnInit {
     this.ingredients = this.ingredientsService.getIngredients();
     this.ingredientsService.ingredientsChanged.subscribe(((ingredients: Ingredient[]) => {this.ingredients = ingredients;}));
   }
+  onEditItem(index: number){
+    this,this.ingredientsService.startedEditing.next(index);
+  }
 
   //ngDoCheck(){
   //  this.ingredients = this.ingredientsService.getIngredients();
