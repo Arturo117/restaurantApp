@@ -15,6 +15,12 @@ export class IngredientsService{
     getIngredient(index: number){
         return this.ingredients[index];
     }
+    deleteIngredient(index: number){
+        console.log(index);
+        this.ingredients.splice(index,1);
+        this.ingredientsChanged.next(this.ingredients.slice());
+    }
+    
     addIngredient(ingredient: Ingredient){
         
         this.ingredients.push(ingredient);
