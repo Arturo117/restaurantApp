@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Recipe } from '../recipe.model';
 import { RecipeService } from 'src/app/services/recipe.service';
 import { Router, Params, ActivatedRoute } from '@angular/router';
+import { FormArray } from '@angular/forms';
 
 
 @Component({
@@ -27,6 +28,10 @@ export class RecipesDetailComponent implements OnInit {
   }
   onEditRecipe(){
     this.router.navigate(['edit'], {relativeTo: this.route});
+  }
+  onDeletedRecipe(){
+    this.recipeService.deleteRecipe(this.id);
+    this.router.navigate['../'],{relativeTo: this.route}
   }
 
 }
